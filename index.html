@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="bod">
+        <p id="p1">H</p>
+        <button onclick="func()">Click me</button>
+    </div>
+    <script>
+        document.getElementById("p1").innerHTML ="Hello World";
+        function func(){
+            alert("Hello World");
+            if(document.getElementById("p1").innerHTML!="Welcome to the World")
+            {
+                document.getElementById("p1").innerHTML ="Welcome to the World";
+            }
+            else{
+                document.getElementById("p1").innerHTML ="You already clicked";
+            }
+        }
+        
+    </script>
+</body>
+
+</html>

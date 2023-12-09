@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:yellow;
+        }
+        #ele{
+            width:50px;
+            height:50px;
+            background-color:red;
+            position:absolute;
+            border-radius:25px;
+            /* top:0px;
+            left:0px; */
+        }
+        #ele1{
+            width:50px;
+            height:50px;
+            border-radius:25px;
+            background-color:green;
+            position:absolute;
+            top:100px;
+            left:100px;
+        }
+        .button{
+            display:flex;
+            justify-content:right;
+            align-items: end;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="button">
+        <button id="btn" onclick="left()">Left</button>
+        <button id="btn" onclick="right()">Right</button>
+        <button id="btn" onclick="down()">Down</button>
+        <button id="btn" onclick="up()">Up</button>
+    </div>
+    <div id="ele"></div>
+    <div id="ele1"></div>
+    <script>
+        const ele=document.getElementById("ele");
+        pos1=0
+        pos2=0
+        ele.style.left=pos1+"px";
+        ele.style.top=pos2+"px";
+        function check(){
+            if(ele.style.left==100+"px" && ele.style.top==100+"px"){
+                alert("You reached the destination");
+                pos1=0;
+                pos2=0;
+                ele.style.left=pos1+"px";
+                ele.style.top=pos2+"px";
+            }
+        }
+        function left(){
+            console.log("left");
+            if(pos1>0){
+                pos1-=10;
+                ele.style.left=pos1+"px";
+                check();
+            }
+            else{
+                alert("You can't go left");
+            
+            }
+        }
+        function right(){
+            console.log("right");
+            pos1+=10;
+            ele.style.left=pos1+"px";
+            check();
+        }
+        function down(){
+            console.log("down");
+            pos2+=10;
+            ele.style.top=pos2+"px";
+            check();
+        }
+        function up(){
+            console.log("up");
+            if(pos2>0){
+                pos2-=10;
+                ele.style.top=pos2+"px";
+                check();
+            }
+            else{
+                alert("You can't go up");
+            }
+        }
+    </script>
+</body>
+
+</html>

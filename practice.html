@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="return check()" name="myform" method="post" >
+        <p>Name :</p>
+        <input type="text" name="name">
+        <p>Age :</p>
+        <input type="text" name="age">
+        <input type="submit" value="Submit">
+    </form>
+    <!-- <p>Name: </p>
+    <input type="text" id="name">
+    <p>Age: </p>
+    <input type="text" id="age">
+    <button onclick="check()">Submit</button> -->
+
+    <script>
+        function check() {
+            // const v = document.getElementById("name").value;
+            // const a = document.getElementById("age").value;
+            const v=document.forms["myform"]["name"].value;
+            const a=document.forms["myform"]["age"].value;
+            console.log(v);
+            if (v === "" || a === "") {
+                alert("Please enter your name and age");
+                return false;
+            }
+            else{
+                alert("Nice job")
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
